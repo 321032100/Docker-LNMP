@@ -24,7 +24,10 @@ services:
     restart: always
     ports:
       - "80:80"
+      - "81:81"
       - "443:443"
+      - "8080:8080"
+      - "8081:8181"
     volumes:
       - ./www:/data/www
       - ./docker/config/proxy/conf.d:/etc/nginx/conf.d

@@ -11,6 +11,8 @@ services:
     volumes:
       - ./www:/data/www
       - ./docker/log/cgi:/var/log/php-fpm
+      - ./docker/config/php.ini:/etc/php.ini
+      - ./docker/config/php-fpm.conf:/etc/php-fpm.conf
     depends_on:
       - mysql
       - redis
@@ -31,6 +33,7 @@ services:
     volumes:
       - ./www:/data/www
       - ./docker/config/proxy/conf.d:/etc/nginx/conf.d
+      - ./docker/config/nginx.conf:/etc/nginx/nginx.conf
       - ./docker/log/proxy:/var/log/nginx
     depends_on:
       - cgi

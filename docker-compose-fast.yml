@@ -27,7 +27,7 @@ services:
       - "81:81"
       - "443:443"
       - "8080:8080"
-      - "8081:8181"
+      - "8081:8081"
     volumes:
       - ./www:/data/www
       - ./docker/config/proxy/conf.d:/etc/nginx/conf.d
